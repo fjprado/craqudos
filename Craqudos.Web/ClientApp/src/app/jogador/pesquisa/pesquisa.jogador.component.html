@@ -1,0 +1,44 @@
+<h1 class="h4 titulo mb-2">Preleção de Craqudos</h1>
+<p *ngIf="!jogadores">Carregando Craqudos...</p>
+
+<div>
+  <button class="btn btn-primary mb-2 col-md-2" (click)="adicionarJogador()">Adicionar Craqudo</button>
+  <button class="btn btn-danger mb-2 col-md-2" (click)="sortearJogadores()">Sortear Craqudos</button>
+</div>
+<div>
+  <button class="btn btn-success mb-2 col-md-1" (click)="adicionarTodosJogadores(jogadores)">+ Todos</button>
+  <button class="btn btn-danger mb-2 col-md-1" (click)="removerTodosJogadores(jogadores)">- Todos</button>
+</div>
+
+<table class="table table-hover" *ngIf="jogadores">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Nome</th>
+      <th>Posição</th>
+      <th>Nível de Ataque</th>
+      <th>Nível de Defesa</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let j of jogadores">
+      <td style="width: 5%">
+        <button style="width: 100%; height:60%" *ngIf="!temJogadorAdicionado(j)" class="btn btn-success btn-sm" (click)="adicionarJogadorSorteio(j)">+</button>
+        <button style="width: 100%; height:60%" *ngIf="temJogadorAdicionado(j)" class="btn btn-danger btn-sm" (click)="removerJogadorSorteio(j)">-</button>
+      </td>
+      <td style="width: 15%">
+        <img *ngIf="jogadorComFoto(j)" src="../../../../../arquivos/{{j.nomeArquivo}}" style="width: 60%; height:60%" />
+        <img *ngIf="!jogadorComFoto(j)" src="../../../../../arquivos/jogador-padrao.jpg" style="width: 60%; height:18%" />
+      </td>
+      <td style="width: 30%">{{j.nome}}</td>
+      <td style="width: 15%">{{j.posicao}}</td>
+      <td style="width: 10%">{{j.nivelAtaque}}</td>
+      <td style="width: 10%">{{j.nivelDefesa}}</td>
+      <td style="width: 7%"><button class="btn btn-success btn-sm" (click)="editarJogador(j)">Editar</button></td>
+      <td style="width: 7%"><button class="btn btn-danger btn-sm" (click)="deletarJogador(j)">Deletar</button></td>
+    </tr>
+  </tbody>
+</table>

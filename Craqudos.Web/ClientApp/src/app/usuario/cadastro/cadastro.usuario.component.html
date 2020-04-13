@@ -1,0 +1,134 @@
+<div class="text-center">
+  <form class="form-singin">
+    <h1 class="h4 login mb-2">Criar Conta</h1>
+
+    <label for="inputNome" class="sr-only">Nome</label>
+    <input type="text" id="inputNome"
+           name="nome" placeholder="Nome"
+           class="form-control mb-2"
+           [ngClass]="{
+           'is-invalid': nome.invalid && (nome.dirty || nome.touched),
+           'is-valid': nome.valid && (nome.dirty || nome.touched)
+           }"
+           [(ngModel)]="usuario.nome"
+           #nome="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+      <div *ngIf="nome.errors.required">
+        Nome é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputLogin" class="sr-only">Login</label>
+    <input type="text" id="inputLogin"
+           name="login" placeholder="Login"
+           class="form-control mb-2"
+           [ngClass]="{
+           'is-invalid': login.invalid && (login.dirty || login.touched),
+           'is-valid': login.valid && (login.dirty || login.touched)
+           }"
+           [(ngModel)]="usuario.login"
+           #login="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="login.invalid && (login.dirty || login.touched)">
+      <div *ngIf="login.errors.required">
+        Login é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputSenha" class="sr-only">Senha</label>
+    <input type="password" id="inputSenha"
+           name="senha" placeholder="Senha"
+           class="form-control mb-2"
+           [ngClass]="{
+           'is-invalid': senha.invalid && (senha.dirty || senha.touched),
+           'is-valid': senha.valid && (senha.dirty || senha.touched)
+           }"
+           [(ngModel)]="usuario.senha"
+           #senha="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+      <div *ngIf="senha.errors.required">
+        Senha é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <h1 class="h5 login mb-2">Configuracão</h1>
+
+    <label for="inputQuantidadeJogadores" class="sr-only">Quantidade de Jogadores por equipe:</label>
+    <input type="number" id="inputQuantidadeJogadores"
+           name="QuantidadeJogadores"
+           min="4"
+           max="11"
+           placeholder="Quantidade por time (4-11)"
+           class="form-control mb-3"
+           [ngClass]="{
+          'is-invalid': quantidadeJogadores.invalid && (quantidadeJogadores.dirty || quantidadeJogadores.touched),
+          'is-valid': quantidadeJogadores.valid && (quantidadeJogadores.dirty || quantidadeJogadores.touched)
+          }"
+           [(ngModel)]="usuario.quantidadeJogadores"
+           #quantidadeJogadores="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="quantidadeJogadores.invalid && (quantidadeJogadores.dirty || quantidadeJogadores.touched)">
+      <div *ngIf="quantidadeJogadores.errors.required">
+        Quantidade de Jogadores é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputContarGoleiro">Contar Goleiro?</label>
+    <div>
+      <table class="table">
+        <tr>
+          <td style="width:50%">
+            <input style="width:50%" type="radio" id="sim"
+                   name="contarGoleiro"
+                   [(ngModel)]="usuario.contarGoleiro"
+                   value="sim"
+                   #posicao="ngModel"
+                   [ngClass]="{
+            'is-invalid': contarGoleiro.invalid && (contarGoleiro.dirty || contarGoleiro.touched),
+            'is-valid': contarGoleiro.valid && (contarGoleiro.dirty || contarGoleiro.touched)
+            }"
+                   required>Sim
+          </td>
+          <td style="width:50%">
+            <input style="width:50%" type="radio" id="nao"
+                   name="contarGoleiro"
+                   [(ngModel)]="usuario.contarGoleiro"
+                   value="não"
+                   #contarGoleiro="ngModel"
+                   [ngClass]="{
+            'is-invalid': contarGoleiro.invalid && (contarGoleiro.dirty || contarGoleiro.touched),
+            'is-valid': contarGoleiro.valid && (contarGoleiro.dirty || contarGoleiro.touched)
+            }"
+                   required>Não
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="invalid-feedback mb-2" *ngIf="contarGoleiro.invalid && (contarGoleiro.dirty || contarGoleiro.touched)">
+      <div *ngIf="contarGoleiro.errors.required">
+        É preciso definir se será contado o goleiro ou não!!!
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-block mb-2" type="submit" (click)="cadastrar()" [disabled]="ativarSpinner">
+      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" *ngIf="ativarSpinner"></span>
+      Cadastrar
+    </button>
+    <div><a [routerLink]='["/entrar"]'>Voltar</a></div>
+
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+    <div class="alert alert-sucess" *ngIf="usuarioCadastrado">
+      Usuario cadastrado com sucesso!
+      <a class="alert-link" [routerLink]='["/entrar"]'> Clique aqui</a> para entrar no sistema com a sua conta!!!
+    </div>
+  </form>
+</div>

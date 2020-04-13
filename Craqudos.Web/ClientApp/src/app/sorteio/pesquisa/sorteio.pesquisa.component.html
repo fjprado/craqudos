@@ -1,0 +1,19 @@
+<div *ngIf="!jogadores">Listando Jogadores...</div>
+<div class="container" *ngIf="jogadores">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let j of jogadores">
+      <a (click)="abrirJogador(j)" style="cursor:pointer;">
+        <div class="card">
+          <img class="card-top" src="../../../../../arquivos/{{j.nomeArquivo}}" style="width:200px; height: 200px;" />
+          <div class="card-body">
+            <h5 class="card-title">{{j.nome | truncate: 30}}</h5>
+            <h5 class="h5">{{j.posicao}}</h5>
+            <div class="card-text">Atk: {{j.nivelAtaque}} / Def: {{j.nivelDefesa}}</div>
+
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>

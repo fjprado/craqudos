@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"><img src="../../../../../arquivos/{{jogador.nomeArquivo}}"/></div>
+    <div class="col-md-6">
+      <div class="row mb-2"><h1 class="h4">{{jogador.nome}}</h1></div>
+      <div class="row mb-2"><h1 class="h5">{{jogador.posicao}}</h1></div>
+      <div class="row">Nível de Ataque: {{jogador.nivelAtaque}}</div>
+      <div class="row mb-2">Nível de Defesa: {{jogador.nivelDefesa}}</div>
+      <div class="row mb-2">
+        <button class="btn btn-danger btn-lg" (click)="adicionarSorteio()">Adicionar para sorteio</button>
+      </div>
+    </div>
+  </div>
+</div>

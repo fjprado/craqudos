@@ -1,0 +1,7 @@
+F:\repos\Projects\Craqudos\Craqudos.Dominio\obj\Debug\netcoreapp2.2\Craqudos.Dominio.AssemblyInfoInputs.cache
+F:\repos\Projects\Craqudos\Craqudos.Dominio\obj\Debug\netcoreapp2.2\Craqudos.Dominio.AssemblyInfo.cs
+F:\repos\Projects\Craqudos\Craqudos.Dominio\bin\Debug\netcoreapp2.2\Craqudos.Dominio.deps.json
+F:\repos\Projects\Craqudos\Craqudos.Dominio\bin\Debug\netcoreapp2.2\Craqudos.Dominio.dll
+F:\repos\Projects\Craqudos\Craqudos.Dominio\bin\Debug\netcoreapp2.2\Craqudos.Dominio.pdb
+F:\repos\Projects\Craqudos\Craqudos.Dominio\obj\Debug\netcoreapp2.2\Craqudos.Dominio.dll
+F:\repos\Projects\Craqudos\Craqudos.Dominio\obj\Debug\netcoreapp2.2\Craqudos.Dominio.pdb

@@ -1,0 +1,11 @@
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\obj\Debug\netcoreapp2.2\Craqudos.Repositorio.AssemblyInfoInputs.cache
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\obj\Debug\netcoreapp2.2\Craqudos.Repositorio.AssemblyInfo.cs
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\bin\Debug\netcoreapp2.2\Craqudos.Repositorio.deps.json
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\bin\Debug\netcoreapp2.2\Craqudos.Repositorio.dll
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\bin\Debug\netcoreapp2.2\Craqudos.Repositorio.pdb
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\bin\Debug\netcoreapp2.2\Craqudos.Dominio.dll
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\bin\Debug\netcoreapp2.2\Craqudos.Dominio.pdb
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\obj\Debug\netcoreapp2.2\Craqudos.Repositorio.csprojAssemblyReference.cache
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\obj\Debug\netcoreapp2.2\Craqudos.Repositorio.csproj.CopyComplete
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\obj\Debug\netcoreapp2.2\Craqudos.Repositorio.dll
+F:\repos\Projects\Craqudos\Craqudos.Repositorio\obj\Debug\netcoreapp2.2\Craqudos.Repositorio.pdb

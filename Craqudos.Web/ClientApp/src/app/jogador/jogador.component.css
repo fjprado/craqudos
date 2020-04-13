@@ -1,0 +1,10 @@
+.titulo{
+  color: #666;
+}
+
+body {
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Carregar";
+}

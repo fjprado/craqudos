@@ -1,0 +1,126 @@
+<h1 class="h4 titulo">Cadastro de Craqudos</h1>
+<label for="inputNome" class="sr-only">Nome</label>
+<input type="text" id="inputNome"
+       name="nomeJogador"
+       placeholder="Nome do Jogador"
+       class="form-control mb-2 col-md-5"
+       [ngClass]="{
+           'is-invalid': nome.invalid && (nome.dirty || nome.touched),
+           'is-valid': nome.valid && (nome.dirty || nome.touched)
+           }"
+       [(ngModel)]="jogador.nome"
+       #nome="ngModel"
+       required />
+
+<div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+  <div *ngIf="nome.errors.required">
+    Nome do jogador é de preenchimento obrigatório
+  </div>
+</div>
+<label for="inputPosicao" class="sr-only">Posição</label>
+<div class="col-md-5">
+  <table class="table">
+    <tr>
+      <td style="width:33%">
+        <input style="width:33%" type="radio" id="goleiro"
+               name="posicaoJogador"
+               [(ngModel)]="jogador.posicao"
+               value="goleiro"
+               #posicao="ngModel"
+               [ngClass]="{
+            'is-invalid': posicao.invalid && (posicao.dirty || posicao.touched),
+            'is-valid': posicao.valid && (posicao.dirty || posicao.touched)
+            }"
+               required>Goleiro
+      </td>
+      <td style="width:33%">
+        <input type="radio" id="atacante"
+               name="posicaoJogador"
+               [(ngModel)]="jogador.posicao"
+               value="atacante"
+               #posicao="ngModel"
+               [ngClass]="{
+            'is-invalid': posicao.invalid && (posicao.dirty || posicao.touched),
+            'is-valid': posicao.valid && (posicao.dirty || posicao.touched)
+            }"
+               required>Atacante
+      </td>
+      <td style="width:33%">
+        <input type="radio" id="defensor"
+               name="posicaoJogador"
+               [(ngModel)]="jogador.posicao"
+               value="defensor"
+               #posicao="ngModel"
+               [ngClass]="{
+            'is-invalid': posicao.invalid && (posicao.dirty || posicao.touched),
+            'is-valid': posicao.valid && (posicao.dirty || posicao.touched)
+            }"
+               required>Defensor
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="invalid-feedback mb-2" *ngIf="posicao.invalid && (posicao.dirty || posicao.touched)">
+  <div *ngIf="posicao.errors.required">
+    Posição é de preenchimento obrigatório
+  </div>
+</div>
+
+<label for="inputNivelAtaque" class="sr-only">Nivel Ataque</label>
+<input type="number" id="inputNivelAtaque"
+       name="nivelAtaqueJogador"
+       min="0"
+       max="10"
+       placeholder="Nv. de Ataque (0-10)"
+       class="form-control mb-2 col-md-5"
+       [ngClass]="{
+          'is-invalid': nivelAtaque.invalid && (nivelAtaque.dirty || nivelAtaque.touched),
+          'is-valid': nivelAtaque.valid && (nivelAtaque.dirty || nivelAtaque.touched)
+          }"
+       [(ngModel)]="jogador.nivelAtaque"
+       #nivelAtaque="ngModel"
+       required />
+
+<div class="invalid-feedback mb-2" *ngIf="nivelAtaque.invalid && (nivelAtaque.dirty || nivelAtaque.touched)">
+  <div *ngIf="nivelAtaque.errors.required">
+    Nivel de Ataque é de preenchimento obrigatório
+  </div>
+</div>
+
+<label for="inputNivelDefesa" class="sr-only">Nivel Defesa</label>
+<input type="number" id="inputNivelDefesa"
+       name="nivelDefesaJogador"
+       placeholder="Nv. de Defesa (0-10)"
+       class="form-control mb-2 col-md-5"
+       [ngClass]="{
+          'is-invalid': nivelDefesa.invalid && (nivelDefesa.dirty || nivelDefesa.touched),
+          'is-valid': nivelDefesa.valid && (nivelDefesa.dirty || nivelDefesa.touched)
+          }"
+       [(ngModel)]="jogador.nivelDefesa"
+       #nivelDefesa="ngModel"
+       required />
+
+<div class="invalid-feedback mb-2" *ngIf="nivelDefesa.invalid && (nivelDefesa.dirty || nivelDefesa.touched)">
+  <div *ngIf="nivelDefesa.errors.required">
+    Nivel de Defesa é de preenchimento obrigatório
+  </div>
+</div>
+
+<div class="input-group mb-2">
+  <div class="custom-file col-md-5">
+    <input type="file" class="custom-file-input" id="inputFile" (change)="inputChange($event.target.files)">
+    <label class="custom-file-label" for="inputFile">Escolha a foto para o jogador</label>
+  </div>
+</div>
+
+<div class="form-inline">
+  <button class="btn btn-primary" style="margin-right:10px;" (click)="cadastrar()" [disabled]="ativarSpinner">
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" *ngIf="ativarSpinner"></span>
+    Cadastrar
+  </button>
+  <button class="btn btn-secondary" [routerLink]="['/pesquisa-jogador']">Cancelar</button>
+</div>
+<div class="alert alert-danger col-md-5" *ngIf="mensagem">
+  {{mensagem}}
+</div>

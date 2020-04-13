@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "CraqudosDB": "server=localhost;uid=root;pwd=admin;database=CraqudosDB"
+  }
+}

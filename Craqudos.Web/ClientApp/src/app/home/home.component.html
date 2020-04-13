@@ -1,0 +1,27 @@
+<h1>E aí craque!!!</h1>
+<p>Cadastre os jogadores e sorteie as equipes.</p>
+
+<div class="div-0">
+  <div class="div-1">
+    <p>
+      Possui um novo craque para cadastrar?
+      <br>Bora cadastrá-lo.
+    </p>
+    <a [routerLink]='["/cadastro-jogador"]'><button>Cadastre Jogadores</button></a>
+  </div>
+  <div class="div-1">
+    <p>
+      Seu time está completo?
+      <br>Então vamos ver quais serão as equipes de hoje.
+    </p>
+    <a *ngIf="usuarioLogado()" [routerLink]='["/sorteio-efetivar"]'><button>Sortear Equipes</button></a>
+    <a *ngIf="!usuarioLogado()" [routerLink]='["/entrar"]'><button>Sortear Equipes</button></a>
+  </div>
+  <div class="div-1">
+    <p>
+      Quer dar uma olhada nos craques já cadastrados?
+      <br>Aqui você pode gerar uma lista dos jogadores
+    </p>
+    <a [routerLink]='["/pesquisa-jogador"]'><button>Listar Jogadores</button></a>
+  </div>
+</div>

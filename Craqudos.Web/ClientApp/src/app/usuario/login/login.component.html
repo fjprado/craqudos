@@ -1,0 +1,54 @@
+<div class="text-center">
+  <form class="form-singin">
+    <h1 class="h4 login mb-2">Login</h1>
+
+    <label for="inputLogin" class="sr-only">Login</label>
+    <input type="text" id="inputLogin"
+           name="login" placeholder="Informe seu login"
+           class="form-control mb-2"
+           [ngClass]="{
+           'is-invalid': login.invalid && (login.dirty || login.touched),
+           'is-valid': login.valid && (login.dirty || login.touched)
+           }"
+           [(ngModel)]="usuario.login"
+           #login="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="login.invalid && (login.dirty || login.touched)">
+      <div *ngIf="login.errors.required">
+        Login é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputSenha" class="sr-only">Senha</label>
+    <input type="password" id="inputSenha"
+           name="senha" placeholder="Informe sua senha"
+           class="form-control mb-2"
+           [ngClass]="{
+           'is-invalid': senha.invalid && (senha.dirty || senha.touched),
+           'is-valid': senha.valid && (senha.dirty || senha.touched)
+           }"
+           [(ngModel)]="usuario.senha"
+           #senha="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+      <div *ngIf="senha.errors.required">
+        Senha é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-block mb-2" type="submit" (click)="entrar()" [disabled]="ativarSpinner">
+      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" *ngIf="ativarSpinner"></span>
+      Entrar
+    </button>
+    <div>Novo por aqui? <a [routerLink]='["/cadastro-usuario"]'> Cadastre-se</a></div>
+
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+    <div class="alert alert-primary" role="alert" *ngIf="usuarioAutenticado">
+      Usuario está autenticado!!!
+    </div>
+  </form>
+</div>

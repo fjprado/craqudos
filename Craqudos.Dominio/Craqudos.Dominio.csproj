@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Contratos\IConfiguracaoRepositorio.cs" />
+    <Compile Remove="Enumerados\TipoPosicaoEnum.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Enumerados\" />
+    <Folder Include="ObjetosDeValor\" />
+  </ItemGroup>
+
+</Project>
